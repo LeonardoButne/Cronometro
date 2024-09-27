@@ -1,10 +1,12 @@
 import React from 'react'
+import "./Counter.css"
+
 
 const Counter = ({title, number}) => {
   return (
     <div className='counter'>
       <p className="counter-number">{number}</p>
-      <h3>{title}</h3>
+      <h3 className='counter-text'>{title}</h3>
     </div>
   )
 }

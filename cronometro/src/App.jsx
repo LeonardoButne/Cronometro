@@ -5,8 +5,10 @@ import Counter from './components/Counter'
 
 import Fundo from "./assets/fundo.jpg" 
 
+import useCountdown from './hooks/useCountdown'
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [day, hour, minute, second] = useCountdown("Jan 1, 2025 00:00:00")
 
   return (
     <>
@@ -15,10 +17,13 @@ function App() {
           <div className="container">
             <Title title="Contagem regressiva"/>
             
-            <Counter title="Dias" number={2}/>
-            <Counter title="Horas" number={2}/>
-            <Counter title="Minutos" number={2}/>
-            <Counter title="Segundos" number={2}/>
+            <div className="countdown-container">
+              <Counter title="Dias" number={day}/>
+              <Counter title="Horas" number={hour}/>
+              <Counter title="Minutos" number={minute}/>
+              <Counter title="Segundos" number={second}/>
+            </div>
+            
         
           </div>
         </div>
